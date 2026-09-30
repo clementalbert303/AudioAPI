@@ -2,8 +2,8 @@
 
 Une API REST performante et modulaire de transcription audio basée sur **OpenAI Whisper**, couplée à une interface utilisateur interactive **Gradio**, conteneurisée avec **Docker** et hébergée sur **Render**.
 
-- **Gradio Studio :** https://audioapi-nvtn.onrender.com/app
-- **Swagger UI :** https://audioapi-nvtn.onrender.com/docs
+- **Gradio Studio :** https://audioapi-erh5.onrender.com/app
+- **Swagger UI :** https://audioapi-erh5.onrender.com/docs
 
 ---
 
