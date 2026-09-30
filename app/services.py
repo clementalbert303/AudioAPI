@@ -1,3 +1,4 @@
+import gc
 import os
 import whisper
 
@@ -10,5 +11,9 @@ def transcribe_audio_file(file_path: str) -> str:
     if not file_path or not os.path.exists(file_path):
         return "Aucun fichier audio valide fourni."
 
-    result = model.transcribe(file_path)
-    return result["text"]
+    try:
+        result = model.transcribe(file_path)
+        return result.get("text", "")
+    finally:
+        # Libération forcée des objets temporaires en RAM
+        gc.collect()
