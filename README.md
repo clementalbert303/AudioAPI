@@ -33,7 +33,7 @@ L'application suit un pipeline simple pour transformer la voix en texte :
           │
           ▼
     📝 Texte transcrit
-
+```
 
 
 ## 🛠️ Stack Technique
