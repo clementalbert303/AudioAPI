@@ -1,32 +1,46 @@
-# 🎙️ Speech-to-Text API & Studio
+# 🎙️ Speech-to-Text Studio
 
-Une API REST performante et modulaire de transcription audio basée sur **OpenAI Whisper**, couplée à une interface utilisateur interactive **Gradio**, conteneurisée avec **Docker** et hébergée sur **Render**.
+> Application web de transcription audio automatique basée sur le modèle **OpenAI Whisper**.
 
-- **Gradio Studio :** https://audioapi-erh5.onrender.com/app
-- **Swagger UI :** https://audioapi-erh5.onrender.com/docs
+Speech-to-Text Studio permet de transformer un enregistrement audio ou une entrée microphone en **texte transcrit automatiquement** grâce à l'intelligence artificielle.
 
----
-
-## 🛠️ Technologies & Bibliothèques utilisées
-
-- **FastAPI** : Framework Python moderne et performant pour orchestrer l'API REST.
-- **OpenAI Whisper (`tiny`)** : Modèle de reconnaissance vocale avancé, optimisé pour la consommation mémoire.
-- **Gradio** : Interface web interactive intégrée directement dans FastAPI pour l'enregistrement micro et l'import de fichiers.
-- **Uvicorn** : Serveur ASGI ultra-rapide exécutant l'application.
-- **Docker** : Conteneurisation complète garantissant la portabilité entre l'environnement local et la production.
+Ce projet illustre l'intégration d'un modèle de reconnaissance vocale dans une application web légère basée sur **FastAPI** et **Gradio**.
 
 ---
 
-## 📁 Architecture du Projet
+## 🌐 Démo & Documentation
 
-Le projet suit une structure modulaire séparant la logique métier, l'interface graphique et le routage API :
+- 🎙️ **Application Gradio :** https://audioapi-erh5.onrender.com/app
+- 📚 **Documentation interactive :** https://audioapi-erh5.onrender.com/docs
+
+---
+
+## ⚙️ Fonctionnement
+
+L'application suit un pipeline simple pour transformer la voix en texte :
 
 ```text
-.
-├── app/
-│   ├── __init__.py
-│   ├── main.py          # Orchestration FastAPI, CORS et montage Gradio
-│   ├── services.py      # Chargement de Whisper et logique de transcription
-│   └── gradio_ui.py     # Définition de l'interface utilisateur Gradio
-├── Dockerfile           # Configuration du conteneur
-└── requirements.txt     # Dépendances Python
+🎙️ Micro / Fichier audio
+          │
+          ▼
+   🖥️ Interface Gradio
+          │
+          ▼
+    ⚡ Serveur FastAPI
+          │
+          ▼
+     🤖 Whisper Tiny
+          │
+          ▼
+    📝 Texte transcrit
+
+
+
+## 🛠️ Stack Technique
+
+- **Langage :** Python 3.10
+- **IA & Audio :** OpenAI Whisper, PyTorch, FFmpeg
+- **Web & UI :** FastAPI, Gradio, Uvicorn
+- **DevOps :** Docker, Render, Git
+
+---
