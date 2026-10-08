@@ -2,7 +2,7 @@
 
 > Application web de transcription audio automatique basée sur le modèle **OpenAI Whisper**.
 
-Speech-to-Text Studio permet de transformer un enregistrement audio ou une entrée microphone en **texte transcrit automatiquement** grâce à l'intelligence artificielle.
+Speech-to-Text Studio permet de transformer un fichier audio ou une entrée microphone en **texte transcrit automatiquement**
 
 Ce projet illustre l'intégration d'un modèle de reconnaissance vocale dans une application web légère basée sur **FastAPI** et **Gradio**.
 
@@ -17,23 +17,29 @@ Ce projet illustre l'intégration d'un modèle de reconnaissance vocale dans une
 
 ## ⚙️ Fonctionnement
 
-L'application suit un pipeline simple pour transformer la voix en texte :
+L'application suit un pipeline simple pour transformer la voix en texte. L'ensemble de l'application est conteneurisé avec Docker, puis déployé sur Render.
 
-```text
-🎙️ Micro / Fichier audio
-          │
-          ▼
-   🖥️ Interface Gradio
-          │
-          ▼
-    ⚡ Serveur FastAPI
-          │
-          ▼
-     🤖 Whisper Tiny
-          │
-          ▼
-    📝 Texte transcrit
-```
+                 ☁️ Render
+                    │
+                    ▼
+             🐳 Conteneur Docker
+        ┌─────────────────────────┐
+        │                         │
+        │    🖥️ Interface Gradio  │
+        │            │            │
+        │            ▼            │
+        │     ⚡ Serveur FastAPI  │
+        │            │            │
+        │            ▼            │
+        │      🤖 Whisper Tiny    │
+        │            │            │
+        │            ▼            │
+        │      📝 Texte transcrit │
+        │                         │
+        └─────────────────────────┘
+                    ▲
+                    │
+             🎙️ Micro / Audio
 
 
 ## 🛠️ Stack Technique
